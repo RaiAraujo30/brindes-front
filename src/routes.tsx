@@ -3,6 +3,9 @@ import { Login } from './pages/Login'
 import { Home } from './pages/Home'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AuthProvider } from './context/AuthContext'
+
+import { Produtos } from './pages/Produtos'
+
 import { AppLayout } from './pages/AppLayout'
 import { Admin } from './pages/Admin'
 import { Estoque } from './pages/Estoque'
@@ -12,6 +15,7 @@ import { GestaoArquivos } from './pages/GestaoArquivos'
 import { Perfil } from './pages/Perfil'
 import { Configuracoes } from './pages/Configuracoes'
 import { EstoqueParametrizacoes } from './pages/EstoqueParametrizacoes'
+
 
 export const AppRoutes = () => {
   return (
@@ -38,6 +42,8 @@ export const AppRoutes = () => {
             <Route path="perfil" element={<Perfil />} />
             <Route path="configuracoes" element={<Configuracoes />} />
           </Route>
+
+          <Route path="produtos" element={<Produtos />} />
 
           {/* Redirecionar qualquer rota não encontrada para login */}
           <Route path="*" element={<Navigate to="/login" replace />} />
