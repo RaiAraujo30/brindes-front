@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Home } from './pages/Home'
+import { ProdutoDetalhe } from './pages/ProdutoDetalhe'
 import { Login } from './pages/Login'
 import { ProtectedRoute } from './components/ProtectedRoute'
 import { AuthProvider } from './context/AuthContext'
@@ -24,6 +25,7 @@ export const AppRoutes = () => {
         <Routes>
           {/* Rotas públicas */}
           <Route path="/" element={<Home />} />
+          <Route path="/produto/:id" element={<ProdutoDetalhe />} />
           <Route path="/login" element={<Login />} />
 
           {/* Rotas protegidas */}

@@ -1,9 +1,12 @@
 import { Box, Button, Container, Heading, SimpleGrid, Text, VStack } from '@chakra-ui/react'
+import { useNavigate } from 'react-router-dom'
 import { HOME_PRODUTOS, type HomeProduto } from './homeData'
 
 type ProdutoCardProps = HomeProduto
 
-const ProdutoCard = ({ nome, preco, minimo, img }: ProdutoCardProps) => (
+const ProdutoCard = ({ id, nome, preco, minimo, img }: ProdutoCardProps) => {
+  const navigate = useNavigate()
+  return (
   <Box
     bg="white"
     borderRadius="md"
@@ -40,12 +43,14 @@ const ProdutoCard = ({ nome, preco, minimo, img }: ProdutoCardProps) => (
         py={2}
         borderRadius="sm"
         _hover={{ bg: '#222' }}
+        onClick={() => navigate(`/produto/${id}`)}
       >
         🛒&nbsp; Solicitar Orçamento
       </Button>
     </Box>
   </Box>
-)
+  )
+}
 
 export const HomeProdutosDestaque = () => (
   <Box bg="gray.50" py={14}>
